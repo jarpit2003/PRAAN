@@ -1,0 +1,29 @@
+version: 1.0
+runtime: python311
+build:
+  commands:
+    build:
+      - pip install -r requirements.txt
+run:
+  command: uvicorn main:app --host 0.0.0.0 --port 8000
+  network:
+    port: 8000
+  env:
+    - name: DATABASE_URL
+      value: "REPLACE_WITH_RDS_URL"
+    - name: AWS_REGION
+      value: "us-east-1"
+    - name: BEDROCK_MODEL
+      value: "amazon.nova-micro-v1:0"
+    - name: SMTP_HOST
+      value: "smtp.gmail.com"
+    - name: SMTP_PORT
+      value: "587"
+    - name: SMTP_USER
+      value: "shivane5600@gmail.com"
+    - name: SMTP_PASS
+      value: "ozph woyq xdli rmoj"
+    - name: BLOOD_BANK_EMAIL
+      value: "lloydtv43@gmail.com"
+    - name: FROM_EMAIL
+      value: "shivane5600@gmail.com"

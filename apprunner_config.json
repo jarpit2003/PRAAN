@@ -1,0 +1,31 @@
+{
+  "ServiceName": "praan-backend",
+  "SourceConfiguration": {
+    "ImageRepository": {
+      "ImageIdentifier": "241304350951.dkr.ecr.us-east-1.amazonaws.com/praan-backend:latest",
+      "ImageConfiguration": {
+        "Port": "8000",
+        "RuntimeEnvironmentVariables": {
+          "DATABASE_URL": "postgresql://praan:Praan2024Secure@praan-db.ccr6wmsy02xc.us-east-1.rds.amazonaws.com:5432/praan_db",
+          "AWS_REGION": "us-east-1",
+          "BEDROCK_MODEL": "amazon.nova-micro-v1:0",
+          "SMTP_HOST": "smtp.gmail.com",
+          "SMTP_PORT": "587",
+          "SMTP_USER": "shivane5600@gmail.com",
+          "SMTP_PASS": "ozph woyq xdli rmoj",
+          "BLOOD_BANK_EMAIL": "lloydtv43@gmail.com",
+          "FROM_EMAIL": "shivane5600@gmail.com"
+        }
+      },
+      "ImageRepositoryType": "ECR"
+    },
+    "AuthenticationConfiguration": {
+      "AccessRoleArn": "arn:aws:iam::241304350951:role/praan-apprunner-role"
+    },
+    "AutoDeploymentsEnabled": false
+  },
+  "InstanceConfiguration": {
+    "Cpu": "0.25 vCPU",
+    "Memory": "0.5 GB"
+  }
+}

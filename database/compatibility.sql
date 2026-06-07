@@ -1,0 +1,27 @@
+-- Blood type compatibility rules
+-- donor_type can donate to recipient_type
+
+CREATE TABLE IF NOT EXISTS blood_compatibility (
+    donor_type     VARCHAR(3) NOT NULL,
+    recipient_type VARCHAR(3) NOT NULL,
+    PRIMARY KEY (donor_type, recipient_type)
+);
+
+INSERT INTO blood_compatibility (donor_type, recipient_type) VALUES
+-- O- is universal donor
+('O-', 'O-'), ('O-', 'O+'), ('O-', 'A-'), ('O-', 'A+'),
+('O-', 'B-'), ('O-', 'B+'), ('O-', 'AB-'), ('O-', 'AB+'),
+-- O+
+('O+', 'O+'), ('O+', 'A+'), ('O+', 'B+'), ('O+', 'AB+'),
+-- A-
+('A-', 'A-'), ('A-', 'A+'), ('A-', 'AB-'), ('A-', 'AB+'),
+-- A+
+('A+', 'A+'), ('A+', 'AB+'),
+-- B-
+('B-', 'B-'), ('B-', 'B+'), ('B-', 'AB-'), ('B-', 'AB+'),
+-- B+
+('B+', 'B+'), ('B+', 'AB+'),
+-- AB-
+('AB-', 'AB-'), ('AB-', 'AB+'),
+-- AB+ can only donate to AB+
+('AB+', 'AB+');

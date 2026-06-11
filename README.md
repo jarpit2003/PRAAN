@@ -24,6 +24,23 @@ Thalassemia patients require regular blood transfusions throughout their lives. 
 
 ---
 
+## Demo
+
+> 📊 [View Full Pitch Deck →](https://drive.google.com/file/d/1T30C6QSyZ7vKBP7cEa_fybMOpgSv6KRr/view?usp=sharing)
+
+### Dashboard
+![PRAAN Dashboard](docs/screenshots/dashboard.png)
+*Hospital coordinator view — active requests, donor status, critical cases*
+
+### Veeru Bot in Action
+
+| Blood Request Flow | Donor Confirmation | Transfusion Reminder | Escalation |
+|---|---|---|---|
+| ![](docs/screenshots/bot-request.png) | ![](docs/screenshots/bot-donor.png) | ![](docs/screenshots/bot-reminder.png) | ![](docs/screenshots/bot-escalation.png) |
+| Patient creates urgent A+ request | Donor gets match score + distance, replies YES | Predicted date reminder, patient confirms | Auto-escalation after 30 min no response |
+
+---
+
 ## Architecture
 
 ### End-to-End Flow
